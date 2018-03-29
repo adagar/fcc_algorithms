@@ -1,14 +1,11 @@
-function beforeMatch(before, after){
-  /*
-    Before: String to have its case changed
-    After: String whose case is being targeted
-    Returns a new string that has before's content matched to after's case
-   */
+function properCaseMe(str){
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
-
 function myReplace(str, before, after) {
-  var beforeMatch = matchCase(before, after);
-  return str.replace(beforeMatch, after);
+  if(before == properCaseMe(before)){
+    after = properCaseMe(after);
+  }
+  return str.replace(before, after);
 }
 
 myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
